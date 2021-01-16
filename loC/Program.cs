@@ -32,6 +32,7 @@ namespace loC
 
         public static void Main(string[] args)
         {
+           
             var programa = new Program();
             programa.RealizarTrabajo();
         }
@@ -39,12 +40,15 @@ namespace loC
         public void RealizarTrabajo()
         {
             Console.WriteLine("Hello Inversion de Control!");
+            var persistencia = new Persistencia();
             var estudiante = new Estudiante
+            
             {
                 Nombre = "Mishell",
-                Apellido = "Einstein"
+                Apellido = "Llumitaxi"
             };
-            if (Persistencia.Grabar(estudiante))
+           // IGrabador persistencia = new Persistencia();
+            if (persistencia.Grabar(estudiante))
                 Console.WriteLine("Se grabo");
         }
 
